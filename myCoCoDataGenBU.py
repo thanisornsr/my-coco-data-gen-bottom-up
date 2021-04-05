@@ -201,7 +201,7 @@ class Coco_datagen_bu:
 			temp_limb_list = self.limb_list
 			for i in range(len(i_kp)):
 				for j in range(len(temp_limb_list)):
-					limb = limb_list[j]
+					limb = temp_limb_list[j]
 					idx_A = limb[0]
 					idx_B = limb[1]
 					pafs[:,:,[j,j+15]] = self.render_paf(grid_x,grid_y,i_kp[i][idx_A],i_kp[i][idx_B],i_valid[i][idx_A],i_valid[i][idx_B],pafs[:,:,[j,j+15]],temp_h,temp_w)
