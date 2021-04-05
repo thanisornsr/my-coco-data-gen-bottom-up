@@ -79,7 +79,7 @@ class Coco_datagen_bu:
 			temp_kps.append(t_k)
 			temp_vs.append(t_v)
 
-		return temp_kps_and_vs
+		return temp_kps, temp_vs
 
 	def get_wh(self):
 		temp_wh = []
