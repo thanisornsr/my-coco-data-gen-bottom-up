@@ -216,7 +216,7 @@ class Coco_datagen_bu:
 			batch_heatmaps.append(heatmaps)
 			batch_valids.append(i_valid)
 			batch_pafs.append(pafs)
-		batch_imgs = np.arrray(batch_imgs)
+		batch_imgs = np.array(batch_imgs)
 		batch_heatmaps = np.array(batch_heatmaps)
 		batch_pafs = np.array(batch_pafs)
 
