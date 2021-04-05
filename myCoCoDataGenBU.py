@@ -118,7 +118,7 @@ class Coco_datagen_bu:
 		else:
 			return accumulate_confid_map
 
-	def render_paf(i_grid_x,i_grid_y,i_kp_A,i_kp_B,i_v_A,i_v_B,accumulate_vec_map,i_h,i_w):
+	def render_paf(self,i_grid_x,i_grid_y,i_kp_A,i_kp_B,i_v_A,i_v_B,accumulate_vec_map,i_h,i_w):
 		if (i_v_A != 0) and (i_v_B !=0):
 			i_kp_A = i_kp_A.astype('float')
 			i_kp_B = i_kp_B.astype('float')
