@@ -32,22 +32,29 @@ class Coco_datagen_bu:
 		dataType = anno_type
 		annFile = '{}/annotations/person_keypoints_{}.json'.format(dataDir,dataType)
 		self.coco_kps = COCO(annFile)
+		print('Initiate COCO: Done ...')
 
 		self.annIds = self.coco_kps.getAnnIds()
 		self.anns = self.coco_kps.loadAnns(self.annIds)
 
 		self.img_ids = [ann['image_id'] for ann in self.anns]
 		self.unique_img_ids = list(set(self.img_ids))
+		print('Get image id: Done ...')
 		self.n_imgs = len(self.unique_img_ids)
 		self.kps, self.valids = self.get_kps_valids_by_id()
+		print('Split kps and valids: Done ...')
 		self.imgs = self.coco_kps.loadImgs(self.unique_img_ids)
+		print('Load images: Done ...')
 		self.img_wh = self.get_wh()
+		print('Get image width and height: Done ...')
 
 		self.start_idx, self.end_idx, self.n_batchs = self.get_start_end_idx()
+		print('Get start and end index: Done ...')
 
 		self.limb_list = [(2,1),(3,0),(4,0),(6,5),(5,11),(6,12),(5,7),(6,8),(7,9),(8,10),(12,11),(11,13),(12,14),(13,15),(14,16)]
 		self.n_keypoints = 17
 		self.n_limbs = 15
+		print('Create datagen: Done ...')
 
 
 
