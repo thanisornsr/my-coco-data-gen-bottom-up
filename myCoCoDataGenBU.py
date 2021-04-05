@@ -222,6 +222,23 @@ class Coco_datagen_bu:
 
 		return batch_imgs, batch_heatmaps, batch_pafs, batch_valids
 
+	def shuffle_order(self):
+		temp_kps = self.kps
+		temp_valids = self.valids
+		temp_imgs = self.imgs
+		temp_unique_img_ids = self.unique_img_ids
+		temp_img_wh = self.img_wh
+		to_shuffle = list(zip(temp_kps, temp_valids, temp_imgs, temp_unique_img_ids, temp_img_wh))
+		random.shuffle(to_shuffle)
+		temp_kps, temp_valids, temp_imgs, temp_unique_img_ids, temp_img_wh = zip(*to_shuffle)
+
+		self.kps = temp_kps
+		self.valids = temp_valids
+		self.imgs = temp_imgs
+		self.unique_img_ids = temp_unique_img_ids
+		self.img_wh = temp_img_wh
+
+
 
 
 
