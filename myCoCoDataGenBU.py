@@ -136,9 +136,9 @@ class Coco_datagen_bu:
 			limb_vec_unit = limb_vec / norm
 
 			min_x = max(int(round(min(centerA[0], centerB[0]) - thre)), 0)
-			max_x = min(int(round(max(centerA[0], centerB[0]) + thre)), grid_x)
+			max_x = min(int(round(max(centerA[0], centerB[0]) + thre)), i_grid_x)
 			min_y = max(int(round(min(centerA[1], centerB[1]) - thre)), 0)
-			max_y = min(int(round(max(centerA[1], centerB[1]) + thre)), grid_y)
+			max_y = min(int(round(max(centerA[1], centerB[1]) + thre)), i_grid_y)
 			range_x = list(range(int(min_x), int(max_x), 1))
 			range_y = list(range(int(min_y), int(max_y), 1))
 			xx, yy = np.meshgrid(range_x, range_y)
