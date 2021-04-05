@@ -211,14 +211,14 @@ class Coco_datagen_bu:
 			o_img = io.imread('./'+ temp_img_dir + '/' + i_img['file_name'])
 			r_img = resize(o_img,temp_input_shape)
 			r_img = r_img.astype('float32')
-			print(r_img.shape)
-
-			batch_imgs.append(r_img)
-			batch_heatmaps.append(heatmaps)
-			batch_valids.append(i_valid)
-			batch_pafs.append(pafs)
+			# print(r_img.shape)
+			if len(r_img.shape) > 2:
+				batch_imgs.append(r_img)
+				batch_heatmaps.append(heatmaps)
+				batch_valids.append(i_valid)
+				batch_pafs.append(pafs)
 		batch_imgs = np.array(batch_imgs)
-		print(batch_imgs.shape)
+		# print(batch_imgs.shape)
 		batch_heatmaps = np.array(batch_heatmaps)
 		batch_pafs = np.array(batch_pafs)
 
