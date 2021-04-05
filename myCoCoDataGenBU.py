@@ -39,7 +39,7 @@ class Coco_datagen_bu:
 		self.img_ids = [ann['image_id'] for ann in self.anns]
 		self.unique_img_ids = list(set(self.img_ids))
 		self.n_imgs = len(self.unique_img_ids)
-		self.kps, self.valids = get_kps_valids_by_id()
+		self.kps, self.valids = self.get_kps_valids_by_id()
 		self.imgs = self.coco_kps.loadImgs(self.unique_img_ids)
 		self.img_wh = self.get_wh()
 
