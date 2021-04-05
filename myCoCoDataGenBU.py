@@ -208,7 +208,7 @@ class Coco_datagen_bu:
 
 			#imgs
 			i_img = temp_imgs[idx]
-			o_img = io.imread('./'+ temp_imgdir + '/' + i_img['file_name'])
+			o_img = io.imread('./'+ temp_img_dir + '/' + i_img['file_name'])
 			r_img = resize(o_img,temp_input_shape)
 			r_img = r_img.astype('float32')
 
