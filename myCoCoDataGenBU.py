@@ -88,8 +88,8 @@ class Coco_datagen_bu:
 				temp_v = t_v[i]
 				t_k[i] = [temp_k[0,:],*temp_k[3:,:]]
 				t_v[i] = [temp_v[0],*temp_v[3:]]
-			print(t_k)
-			print(t_v)
+			print(t_k[0].shape)
+			print(t_v[0].shape)
 			temp_kps.append(t_k)
 			temp_vs.append(t_v)
 
