@@ -81,7 +81,7 @@ class Coco_datagen_bu:
 		for i in range(self.n_imgs):
 			temp_id = self.unique_img_ids[i]
 			temp_k_and_v = [ann['keypoints'] for ann in self.anns if ann['image_id'] == temp_id]
-			print(len(temp_k_and_v))
+			print(temp_k_and_v)
 			t_k,t_v = self.get_target_valid_joint(temp_k_and_v)
 
 			temp_kps.append(t_k)
