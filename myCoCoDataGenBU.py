@@ -89,8 +89,8 @@ class Coco_datagen_bu:
 				# print(temp_k.shape)
 				t_k[i] = np.delete(temp_k,[1,2],0)
 				t_v[i] = np.delete(temp_v,[1,2])
-				print(t_k[0].shape)
-				print(t_v[0].shape)
+				# print(t_k[0].shape)
+				# print(t_v[0].shape)
 			temp_kps.append(t_k)
 			temp_vs.append(t_v)
 
