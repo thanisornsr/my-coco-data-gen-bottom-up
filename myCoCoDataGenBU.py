@@ -51,9 +51,9 @@ class Coco_datagen_bu:
 		self.start_idx, self.end_idx, self.n_batchs = self.get_start_end_idx()
 		print('Get start and end index: Done ...')
 
-		self.limb_list = [(2,1),(3,0),(4,0),(6,5),(5,11),(6,12),(5,7),(6,8),(7,9),(8,10),(12,11),(11,13),(12,14),(13,15),(14,16)]
-		self.n_keypoints = 17
-		self.n_limbs = 15
+		self.limb_list = [(0,1),(2,0),(0,3),(0,4),(3,5),(4,6),(5,7),(6,8),(4,3),(3,9),(4,10),(10,9),(9,11),(10,12),(11,13),(12,14)]
+		self.n_keypoints = 15
+		self.n_limbs = 16
 		print('Create datagen: Done ...')
 
 
@@ -81,6 +81,7 @@ class Coco_datagen_bu:
 		for i in range(self.n_imgs):
 			temp_id = self.unique_img_ids[i]
 			temp_k_and_v = [ann['keypoints'] for ann in self.anns if ann['image_id'] == temp_id]
+			print(len(temp_k_and_v))
 			t_k,t_v = self.get_target_valid_joint(temp_k_and_v)
 
 			temp_kps.append(t_k)
@@ -129,7 +130,7 @@ class Coco_datagen_bu:
 		if (i_v_A != 0) and (i_v_B !=0):
 			i_kp_A = i_kp_A.astype('float')
 			i_kp_B = i_kp_B.astype('float')
-			thre = 1  # limb width
+			thre = 2  # limb width
 
 			centerA = (i_kp_A[0] * i_grid_x / i_w,i_kp_A[1] * i_grid_y / i_h)
 			centerB = (i_kp_B[0] * i_grid_x / i_w,i_kp_B[1] * i_grid_y / i_h)
