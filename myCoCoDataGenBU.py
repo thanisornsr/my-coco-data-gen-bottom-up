@@ -86,7 +86,7 @@ class Coco_datagen_bu:
 			for i in range(len(t_k)):
 				temp_k = t_k[i]
 				temp_v = t_v[i]
-				t_k[i] = [temp_k[:,0],*temp_k[:,3:]]
+				t_k[i] = [temp_k[0,:],*temp_k[3:,:]]
 				t_v[i] = [temp_v[0],*temp_v[3:]]
 			print(t_k)
 			print(t_v)
