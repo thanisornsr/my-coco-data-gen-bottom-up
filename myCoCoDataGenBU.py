@@ -137,7 +137,7 @@ class Coco_datagen_bu:
 		if (i_v_A != 0) and (i_v_B !=0):
 			i_kp_A = i_kp_A.astype('float')
 			i_kp_B = i_kp_B.astype('float')
-			thre = 1.5  # limb width
+			thre = 1.2  # limb width
 
 			centerA = (i_kp_A[0] * i_grid_x / i_w,i_kp_A[1] * i_grid_y / i_h)
 			centerB = (i_kp_B[0] * i_grid_x / i_w,i_kp_B[1] * i_grid_y / i_h)
