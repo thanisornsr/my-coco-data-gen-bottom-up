@@ -219,7 +219,7 @@ class Coco_datagen_bu:
 					limb = temp_limb_list[j]
 					idx_A = limb[0]
 					idx_B = limb[1]
-					pafs[:,:,[j,j+15]] = self.render_paf(grid_x,grid_y,i_kp[i][idx_A],i_kp[i][idx_B],i_valid[i][idx_A],i_valid[i][idx_B],pafs[:,:,[j,j+15]],temp_h,temp_w)
+					pafs[:,:,[j,j+self.n_limbs]] = self.render_paf(grid_x,grid_y,i_kp[i][idx_A],i_kp[i][idx_B],i_valid[i][idx_A],i_valid[i][idx_B],pafs[:,:,[j,j+15]],temp_h,temp_w)
 
 			#imgs
 			i_img = temp_imgs[idx]
