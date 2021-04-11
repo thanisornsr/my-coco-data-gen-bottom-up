@@ -137,7 +137,7 @@ class Coco_datagen_bu:
 		if (i_v_A != 0) and (i_v_B !=0):
 			i_kp_A = i_kp_A.astype('float')
 			i_kp_B = i_kp_B.astype('float')
-			thre = 1.2  # limb width
+			thre = 1.6  # limb width
 
 			centerA = (i_kp_A[0] * i_grid_x / i_w,i_kp_A[1] * i_grid_y / i_h)
 			centerB = (i_kp_B[0] * i_grid_x / i_w,i_kp_B[1] * i_grid_y / i_h)
@@ -209,7 +209,7 @@ class Coco_datagen_bu:
 			heatmaps = np.zeros((int(grid_y), int(grid_x), channels_heat))
 			for i in range(len(i_kp)):
 				for j in range(channels_heat):
-					heatmaps[:,:,j] = self.render_heatmap(grid_x,grid_y,i_kp[i][j],i_valid[i][j],2,heatmaps[:,:,j],temp_h,temp_w)
+					heatmaps[:,:,j] = self.render_heatmap(grid_x,grid_y,i_kp[i][j],i_valid[i][j],1.5,heatmaps[:,:,j],temp_h,temp_w)
 
 			#paf
 			pafs = np.zeros((int(grid_y), int(grid_x), channels_paf))
